@@ -1,0 +1,18 @@
+# Ignore editor temp files and backup files
+*~
+*.bak
+*.swp.
+.\#*
+\#*\#
+
+# Ignore build directories
+build/
+dist/
+
+# Ignore generated SConsfiles
+*.pyc
+.scon*
+config.log
+
+# Ignore coverage files
+*.gcno
