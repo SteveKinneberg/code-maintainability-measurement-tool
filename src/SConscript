@@ -1,0 +1,41 @@
+Import('target_env', 'custom_tests')
+
+#######################################################
+# Create CMMT environment
+#######################################################
+cmmt_env = target_env.Clone()
+
+#######################################################
+# Configure CMMT environment
+#######################################################
+config = cmmt_env.Configure(config_h = 'config.h', custom_tests = custom_tests)
+have_boost_program_options = config.CheckLibWithHeader('boost_program_options',
+                                                       'boost/program_options.hpp',
+                                                       'c++')
+have_filesystem = ( config.CheckCXXHeader('filesystem', '<>') or
+                    (config.CheckLib('boost_system', language = 'c++') and
+                     config.CheckLibWithHeader('boost_filesystem',
+                                               'boost/filesystem.hpp',
+                                               'c++')))
+config.CheckCXXSymbol('std::make_array', '(1, 2)', '#include <array>')
+config.CheckCXXSymbol('std::experimental::make_array', '(1, 2)', '#include <experimental/array>')
+
+
+config.CheckDeclaration('posix_fadvise', '#include <fcntl.h>', 'c++')
+cmmt_env = config.Finish()
+
+target_env['required'].update({
+    'Boost Program Options':                have_boost_program_options,
+    'C++17 Filesystem or Boost Filesystem': have_filesystem
+})
+
+#######################################################
+# Build CMMT
+#######################################################
+cmmt = cmmt_env.Program('cmmt', [ cmmt_env.Glob('*.cc'),
+                                      cmmt_env.Glob('cxx/*.cc') ])
+
+#######################################################
+# Install CMMT
+#######################################################
+cmmt_env.Install(cmmt_env['install_bindir'], cmmt)

@@ -1,0 +1,20 @@
+Import('target_test_env')
+
+scoring_test_env = target_test_env.Clone()
+
+scoring_test_env.Append(CPPPATH = [ '../../src' ])
+
+scoring_test_env.AppendUnique(LIBS = [ 'gtest_main', 'pthread' ])
+
+prog = scoring_test_env.Program('scoring_tests', [ Glob('*.cc'),
+                                                   Glob('../../src/extent*.o'),
+                                                   Glob('../../src/cxx/*.o'),
+                                                   '../../src/debug_util.o',
+                                                   '../../src/processing_exception.o',
+                                                   '../../src/scoring_rules.o',
+                                                   '../../src/language_processor.o',
+                                                   '../../src/source_processor.o' ])
+
+test = scoring_test_env.Install(scoring_test_env['install_bindir'], prog)
+
+target_test_env.Append(automated_tests = [prog])
