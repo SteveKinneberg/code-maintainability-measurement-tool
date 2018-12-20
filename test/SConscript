@@ -1,1 +1,6 @@
-SConscript('scoring/SConscript')
+Import('target_test_env')
+
+if target_test_env['have_gtest']:
+    SConscript('scoring/SConscript')
+else:
+    print('*** Not building unit tests - missing Google Test framework')
