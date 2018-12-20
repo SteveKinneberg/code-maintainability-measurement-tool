@@ -12,7 +12,8 @@ config = cmmt_env.Configure(config_h = 'config.h', custom_tests = custom_tests)
 have_boost_program_options = config.CheckLibWithHeader('boost_program_options',
                                                        'boost/program_options.hpp',
                                                        'c++')
-have_filesystem = ( config.CheckCXXHeader('filesystem', '<>') or
+have_filesystem = ( (config.CheckCXXHeader('filesystem', '<>') and
+                     config.CheckLib('stdc++fs')) or
                     (config.CheckLib('boost_system', language = 'c++') and
                      config.CheckLibWithHeader('boost_filesystem',
                                                'boost/filesystem.hpp',
