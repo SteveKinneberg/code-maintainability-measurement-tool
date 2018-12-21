@@ -1,12 +1,12 @@
+#ifndef _cmmt_exception_h
+#define _cmmt_exception_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the CMMT exception base class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cmmt_exception_h
-#define _cmmt_exception_h
 
 #include <exception>
 #include <string>

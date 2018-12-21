@@ -1,12 +1,12 @@
+#ifndef _cxx_extent_element_h
+#define _cxx_extent_element_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the C/C++ element extent class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cxx_extent_element_h
-#define _cxx_extent_element_h
 
 #include <memory>
 #include <string_view>

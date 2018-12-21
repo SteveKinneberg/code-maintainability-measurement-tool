@@ -1,12 +1,12 @@
+#ifndef _source_processor_h
+#define _source_processor_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare the source file processor class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _source_processor_h
-#define _source_processor_h
 
 #include <memory>
 #include <stack>

@@ -1,12 +1,12 @@
+#ifndef _ws_analyzer_h
+#define _ws_analyzer_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare the whitespace analyzer class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _ws_analyzer_h
-#define _ws_analyzer_h
 
 
 #include <string_view>

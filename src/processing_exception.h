@@ -1,12 +1,12 @@
+#ifndef _processing_exception_h
+#define _processing_exception_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare Cmmt exception base class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _processing_exception_h
-#define _processing_exception_h
 
 #include <string_view>
 

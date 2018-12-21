@@ -1,12 +1,12 @@
+#ifndef _cxx_extent_operator_func_def_h
+#define _cxx_extent_operator_func_def_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the C/C++ operator function definition extent class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cxx_extent_operator_func_def_h
-#define _cxx_extent_operator_func_def_h
 
 #include "extent_function_def.h"
 

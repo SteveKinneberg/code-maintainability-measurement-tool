@@ -1,12 +1,12 @@
+#ifndef _score_types_processor_h
+#define _score_types_processor_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the score type and various scoring containers.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _score_types_processor_h
-#define _score_types_processor_h
 
 #include <set>
 #include <string>

@@ -1,12 +1,12 @@
+#ifndef _extent_string_h
+#define _extent_string_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the string extent class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _extent_string_h
-#define _extent_string_h
 
 #include <memory>
 #include <string_view>

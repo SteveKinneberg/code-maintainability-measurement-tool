@@ -1,12 +1,12 @@
+#ifndef _extent_h
+#define _extent_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the extent base class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _extent_h
-#define _extent_h
 
 #include <array>
 #include <functional>

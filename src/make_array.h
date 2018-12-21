@@ -1,13 +1,13 @@
+#ifndef _make_array_h
+#define _make_array_h
 /**
- * @headerfile ""
+ * @file
  *
  * Abstract support for C++17 std::filesystem by bringing boost::filesystem into
  * the std namespace if USE_BOOST_FS is defined.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _array_h
-#define _array_h
 
 #include "config.h"
 

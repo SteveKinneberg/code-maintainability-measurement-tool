@@ -1,12 +1,12 @@
+#ifndef _cxx_extent_using_statement_h
+#define _cxx_extent_using_statement_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the C/C++ comment extent class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cxx_extent_using_statement_h
-#define _cxx_extent_using_statement_h
 
 #include "extent_cxx.h"
 

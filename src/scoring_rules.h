@@ -1,12 +1,12 @@
+#ifndef _scoring_rules_h
+#define _scoring_rules_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the score rules class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _scoring_rules_h
-#define _scoring_rules_h
 
 #include <array>
 #include <functional>

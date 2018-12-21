@@ -1,12 +1,12 @@
+#ifndef _cxx_cxx_source_processor_h
+#define _cxx_cxx_source_processor_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare the C/C++ source file processor class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cxx_cxx_source_processor_h
-#define _cxx_cxx_source_processor_h
 
 #include "../language_processor.h"
 

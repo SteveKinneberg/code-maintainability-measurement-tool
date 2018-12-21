@@ -1,12 +1,12 @@
+#ifndef _scoring_test_h
+#define _scoring_test_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the scoring Google Test class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _scoring_test_h
-#define _scoring_test_h
 
 #include <gtest/gtest.h>
 

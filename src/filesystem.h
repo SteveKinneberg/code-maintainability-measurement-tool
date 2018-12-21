@@ -1,13 +1,13 @@
+#ifndef _filesystem_h
+#define _filesystem_h
 /**
- * @headerfile ""
+ * @file
  *
  * Abstract support for C++17 std::filesystem by bringing boost::filesystem into
  * the std namespace if USE_BOOST_FS is defined.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _filesystem_h
-#define _filesystem_h
 
 #include "config.h"
 

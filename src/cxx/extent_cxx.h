@@ -1,12 +1,12 @@
+#ifndef _cxx_extent_cxx_h
+#define _cxx_extent_cxx_h
 /**
- * @headerfile ""
+ * @file
  *
  * Define the extent_cxx base class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _cxx_extent_cxx_h
-#define _cxx_extent_cxx_h
 
 #include <cassert>
 

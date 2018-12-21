@@ -1,5 +1,7 @@
+#ifndef _project_h
+#define _project_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare the project class.
  *
@@ -8,8 +10,6 @@
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _project_h
-#define _project_h
 
 #include <ostream>
 #include <map>

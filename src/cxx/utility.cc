@@ -1,5 +1,5 @@
 /**
- * @headerfile ""
+ * @file
  *
  * Implement C/C++ processing utility functions.
  *

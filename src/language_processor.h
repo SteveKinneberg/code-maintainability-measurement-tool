@@ -1,12 +1,12 @@
+#ifndef _language_processor_h
+#define _language_processor_h
 /**
- * @headerfile ""
+ * @file
  *
  * Declare the source file processor class.
  *
  * Copyright 2017 Steve Kinneberg <steve.kinneberg@gmail.com>
  */
-#ifndef _language_processor_h
-#define _language_processor_h
 
 #include <cassert>
 #include <memory>
