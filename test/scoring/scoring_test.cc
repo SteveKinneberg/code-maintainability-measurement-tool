@@ -15,6 +15,16 @@
 
 namespace {
 
+/**
+ * Helper template function to generate a string representation of a set of
+ * scores held in an STL container.
+ *
+ * @tparam T        The score container type.
+ *
+ * @param scores    The scores to include in the output string.
+ *
+ * @return  A string representation of the scores.
+ */
 template<class T>
 std::string scores_to_string(const T& scores)
 {
@@ -34,7 +44,16 @@ std::string scores_to_string(const T& scores)
                            });
 }
 
-
+/**
+ * Function to extend Google Test for comparing scores with line information so
+ * that more intelligible information can be provided in the case of a test
+ * failure.
+ *
+ * @param expectedExpr      C string containing the expected expression.
+ * @param actualExpr        C string containing the actual expression.
+ * @param expected          The expected "value".
+ * @param actual            The actual "value".
+ */
 testing::AssertionResult line_score_eq(const char* expectedExpr,
                                        const char* actualExpr,
                                        const ScoringTestBase::test_sample_line& expected,
@@ -67,7 +86,9 @@ testing::AssertionResult line_score_eq(const char* expectedExpr,
     return testing::AssertionFailure() << msg.str();
 }
 
-
+/**
+ * Define the Google Test macro for comparing line score information.
+ */
 #define EXPECT_LINE_EQ(exp, act)  EXPECT_PRED_FORMAT2(line_score_eq, exp, act)
 
 }

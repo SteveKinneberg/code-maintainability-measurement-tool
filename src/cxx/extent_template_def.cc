@@ -43,10 +43,12 @@ extent::process_return extent_template_def::process(std::string_view line)
 
     if (auto op = get_operator(line);
         !_have_open_angle_bracket && (op == "<")) {
+        DEBUG_ONLY(LOG << "op = '" << op << "'" << std::endl);
         _have_open_angle_bracket = true;
         return { 1, nullptr };
 
     } else if (_have_open_angle_bracket && (op == ">")) {
+        DEBUG_ONLY(LOG << "op = '" << op << "'" << std::endl);
         complete();
 
         add_score(rules.template_parameter_count(_param_count));

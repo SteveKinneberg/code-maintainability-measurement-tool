@@ -32,6 +32,7 @@ class source_processor {
     /**
      * Constructor.
      *
+     * @param rules         Scoring rules for the source being processed.
      * @param filename      Name of the file to be processed.
      * @param source_data   Contents of the file to be processed.
      */
@@ -98,6 +99,9 @@ class source_processor {
      */
     top_extent_scores_t top_function_scores();
 
+    /**
+     * Indicate if '*this' has an implementation when used in any bool context.
+     */
     operator bool() const { return bool(_processor_impl); }
 
     source_processor() = delete;
@@ -105,8 +109,6 @@ class source_processor {
     source_processor& operator=(const source_processor&) = delete;
 
   private:
-    language_processor_ptr _processor_impl;
-
+    language_processor_ptr _processor_impl;     ///< Pointer to the actual processor implementation.
 };
-
 #endif

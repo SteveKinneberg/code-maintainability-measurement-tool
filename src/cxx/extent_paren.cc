@@ -71,6 +71,7 @@ extent::check_return extent_paren::check_token(language_processor& processor,
 extent::process_return extent_paren::process(std::string_view line)
 {
     auto op = get_operator(line);
+    DEBUG_ONLY(LOG << "op = '" << op << "'" << std::endl);
 
     if (op == ")") {
         --_level;
@@ -83,17 +84,17 @@ extent::process_return extent_paren::process(std::string_view line)
         return { 1, [&processor = _cxx_processor,
                      param_count = _param_count,
                      start = _start, end = _end] () {
-                processor.pop_extent();
+                        processor.pop_extent();
 
-                if (auto& e = processor.get_current_extent();
-                    typeid(e) == typeid(extent_function_def) ||
-                    typeid(e) == typeid(extent_operator_func_def)) {
+                        if (auto& e = processor.get_current_extent();
+                            typeid(e) == typeid(extent_function_def) ||
+                            typeid(e) == typeid(extent_operator_func_def)) {
 
-                    auto& efd = static_cast<extent_function_def&>(e);
-                    efd.set_param_count(param_count);
-                    efd.add_score(processor.rules().statement_line_count(end - start + 1));
-                }
-            }};
+                            auto& efd = static_cast<extent_function_def&>(e);
+                            efd.set_param_count(param_count);
+                            efd.add_score(processor.rules().statement_line_count(end - start + 1));
+                        }
+                    }};
     }
 
     // if (struct { int a; } x = { 1 }; x.a == 2) {}

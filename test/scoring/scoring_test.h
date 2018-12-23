@@ -16,12 +16,18 @@
 #include "score_types.h"
 #include "scoring_rules.h"
 
+/**
+ * Scoring test base class.
+ *
+ * This serves as the base class for all scoring test code.
+ */
 class ScoringTestBase: public ::testing::Test {
   public:
     using test_sample_line = std::pair<score_t, std::string_view>;
     using test_sample_code = std::vector<test_sample_line>;
     using test_extent_scores = std::vector<std::pair<std::string_view, score_t>>;
 
+    /** Destructor. */
     virtual ~ScoringTestBase() = default;
 
   protected:

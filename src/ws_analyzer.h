@@ -55,8 +55,8 @@ class ws_analyzer {
     ws_analyzer& operator=(const ws_analyzer&) = delete;
 
   private:
-    const scoring_rules& _scoring_rules;
-    std::string_view _prev_indent;  ///< Indentation for the previous line of code.
+    const scoring_rules& _scoring_rules;    ///< Reference to the scoring rules.
+    std::string_view _prev_indent;          ///< Indentation for the previous line of code.
 };
 
 #endif

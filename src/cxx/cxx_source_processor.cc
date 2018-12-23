@@ -35,12 +35,17 @@
 
 namespace {
 
+/// The list of file name extensions for C/C++ source file.
 constexpr auto exts = {
     ".c", ".c++", ".cc", ".cpp", ".cxx", ".C",
     ".h", ".h++", ".hh", ".hpp", ".hxx", ".H"
 };
 
-
+/**
+ * Helper function to skip whitespace.
+ *
+ * @param[in,out] s     Reference to a string view to trim the leading whitespace from.
+ */
 void skip_ws(std::string_view& s) {
     s.remove_prefix(std::min(s.length(), s.find_first_not_of(" \t")));
 }
@@ -126,10 +131,11 @@ std::size_t cxx_source_processor::process_line(std::string_view line)
         auto& e = get_current_extent();
         assert(e.name().size() < 100);
 
-        SJK << "Processing: \"" << line << "\" in context " << e << std::endl;
+        DEBUG_ONLY(LOG << "Processing: \"" << line << "\" in context " << e << std::endl);
 
         auto [processed, post_process] = e.process(line);
         line.remove_prefix(processed);
+        DEBUG_ONLY(LOG << "processed: " << processed << "    line: \"" << line << "\"" << std::endl);
         if (post_process) {
             post_process();
         }

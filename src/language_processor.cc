@@ -34,7 +34,7 @@ language_processor::~language_processor()
 }
 
 std::int32_t language_processor::extension_match(std::string_view filename,
-                                               const std::initializer_list<const char* const>& ext_list)
+                                                 const std::initializer_list<const char* const>& ext_list)
 {
     auto ext_start = filename.rfind('.');
     if (ext_start == filename.npos) {

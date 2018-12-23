@@ -22,6 +22,8 @@ using namespace experimental;
 
 #elif !defined(HAVE_STD__MAKE_ARRAY)
 
+/// @cond IGNORE
+
 #include <type_traits>
 
 /*
@@ -64,6 +66,7 @@ constexpr details::return_type<D, Types...> make_array(Types&&... t) {
 
 }
 
+///@endcond
 #endif
 
 #endif

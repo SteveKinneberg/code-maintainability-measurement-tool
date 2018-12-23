@@ -11,11 +11,13 @@
 
 #include "../debug_util.h"
 
+/// @cond IGNORE
 namespace {
 
 const auto locale = std::locale("C");
 
 }
+/// @endcond
 
 namespace cxx {
 

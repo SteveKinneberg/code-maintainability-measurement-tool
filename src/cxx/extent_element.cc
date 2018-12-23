@@ -53,19 +53,20 @@ extent::process_return extent_element::process(std::string_view line)
     post_process fn = nullptr;
 
     auto op = get_operator(line);
+    DEBUG_ONLY(LOG << "op = '" << op << "'" << std::endl);
 
     if (op == "::") {
         _name += "::";
         processed += 2;
         _continue_name = true;
 
-    } else if ((op == ")") &&
-               (op == "}") &&
+    } else if ((op == ")") ||
+               (op == "}") ||
                (op == "]")) {
         complete();
         fn = [&processor = _cxx_processor] () {
-            processor.pop_extent();
-        };
+                 processor.pop_extent();
+             };
 
     } else if (!op.empty() &&
                (op != "(") &&
@@ -73,9 +74,7 @@ extent::process_return extent_element::process(std::string_view line)
                (op != "[")) {
         complete();
         processed = 1;
-        fn = [&processor = _cxx_processor] () {
-            processor.pop_extent();
-        };
+        fn = [&processor = _cxx_processor] () { processor.pop_extent(); };
 
     } else if (_continue_name) {
         _continue_name = false;

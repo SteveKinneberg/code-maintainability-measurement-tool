@@ -28,7 +28,7 @@ extent::process_return extent_function_def::process(std::string_view line)
 
     if (auto op = get_operator(line); op == "{") {
         add_score(rules.function_parameter_count(_param_count));
-        SJK << "param count: " << _param_count << "     score = " << _score << std::endl;
+        DEBUG_ONLY( LOG << "param count: " << _param_count << "     score = " << _score << std::endl);
 
     } else if ((op == ";") || (_has_body)) {
         complete();

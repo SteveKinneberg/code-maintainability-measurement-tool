@@ -252,10 +252,10 @@ File: bar.c
 }
 ```
 
-A compiler compiling `bar.c` will do so happily because after the `#include`
+A compiler compiling `bar.c` will do so happily because after the `include`
 directive is processed, the resulting module is syntactically complete.  CMMT
 does not insert the contents of include file into the module for processing.  It
-will just simply count the `#include` line as a line of code.
+will just simply count the `include` line as a line of code.
 
 ## Notes
 
