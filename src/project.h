@@ -18,7 +18,6 @@
 #include <typeindex>
 #include <type_traits>
 
-// #include "extent.h"
 #include "filesystem.h"
 #include "score_types.h"
 #include "scoring_rules.h"
@@ -87,8 +86,7 @@ class project {
     extent_scores_t _function_scores;           ///< Scores for each function.
     top_extent_scores_t _top_function_scores;   ///< Scores for each function sorted by score.
 
-    scoring_rules _scoring_rules;
+    scoring_rules _scoring_rules;               ///< Scoring rules.
 };
-
 
 #endif

@@ -17,9 +17,11 @@
 
 
 class language_processor;
+/// Convenience type for a pointer to a language processor.
 using language_processor_ptr = std::unique_ptr<language_processor>;
 
 class source_processor;
+/// Convenience type for a pointer to a source processor.
 using source_processor_ptr = std::unique_ptr<source_processor>;
 
 

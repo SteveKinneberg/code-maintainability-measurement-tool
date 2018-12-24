@@ -15,26 +15,33 @@
 #include "score_types.h"
 
 /**
- * Hold state information for an extent of source code while that extent is
- * being processed.  This is useful for scoring things that may extend
- * across several lines.  It can also be useful for processing a statement
- * that maybe one of many on a single line.
- *
- * This is a base class that can be sub-classed to track additional information
- * about a given extent.
+ * Hold extent state information for a string.
  */
 class extent_string: public extent {
   public:
-    enum class style { single_quote, double_quote };
+    /// Kinds of strings.
+    enum class style {
+        single_quote,   ///< Single quote strings.
+        double_quote    ///< Double quote strings.
+    };
 
+    /**
+     * Check if the beginning of 'line' matches a string extent.
+     *
+     * @param processor     Reference to the current language processor.
+     * @param line          String view into the unprocessed part of the current
+     *                      line being processed.
+     *
+     * @return  Whether this extent processor handles the next extent and how
+     *          many characters were consumed.
+     */
     static check_return check_token(language_processor& processor, std::string_view line);
 
     /**
      * Constructor.
      *
-     * @param name      Name given to the extent.  Typically the
-     *                  class/struct or function name.
-     * @param line_num  Current line number.
+     * @param processor     Reference to the current language processor.
+     * @param s             String style.
      */
     extent_string(language_processor& processor, style s):
         extent(processor,
@@ -42,11 +49,24 @@ class extent_string: public extent {
         _style(s)
     {}
 
+    /** Destructor. */
     virtual ~extent_string() final = default;
 
+    /**
+     * Move constructor.
+     *
+     * @param other     Reference to the source instance to move.
+     */
     extent_string(extent_string&& other) = default;
-    extent_string& operator=(extent_string&& other) = default;
 
+    /**
+     * Move assignment operator.
+     *
+     * @param other     Reference to the source instance to move.
+     *
+     * @return  Reference to '*this'.
+     */
+    extent_string& operator=(extent_string&& other) = default;
 
     /**
      * Processes the given line according to the current extent.  The number of
@@ -54,7 +74,8 @@ class extent_string: public extent {
      *
      * @param line  Source line to process.
      *
-     * @return  The number of characters processed.
+     * @return  The number of characters processed and a pointer to the post
+     *          processing function.
      */
     virtual process_return process(std::string_view line) final;
 
@@ -63,7 +84,7 @@ class extent_string: public extent {
     extent_string& operator=(const extent_string& other) = delete;
 
   private:
-    style _style;
+    style _style;   ///< The string style being processed.
 };
 
 

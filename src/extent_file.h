@@ -11,10 +11,12 @@
 
 #include "extent.h"
 
+/**
+ * Hold extent state information for a file.
+ */
 class extent_file: public extent {
   public:
     using extent::extent;
 };
-
 
 #endif

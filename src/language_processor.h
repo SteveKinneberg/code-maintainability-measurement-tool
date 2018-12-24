@@ -20,9 +20,11 @@
 #include "debug_util.h"
 
 class extent;
+/// Convenience type for a pointer to an extent.
 using extent_ptr = std::unique_ptr<extent>;
 
 class language_processor;
+/// Convenience type for a pointer to a language processor.
 using language_processor_ptr = std::unique_ptr<language_processor>;
 
 /**
@@ -277,7 +279,8 @@ class language_processor {
      * Utility function for checking if the file extension matches one of the
      * entries in the given list.  Each entry in the list must begin with ".".
      *
-     * @param ext_list  An std::initializer_list<> with all the extensions to check.
+     * @param filename      The file name to check.
+     * @param ext_list      An std::initializer_list<> with all the extensions to check.
      *
      * @return  A value to be added to the overall confidence computation
      *          indicating whether an extension matches or not:

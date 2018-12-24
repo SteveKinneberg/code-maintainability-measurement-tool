@@ -94,9 +94,9 @@ testing::AssertionResult line_score_eq(const char* expectedExpr,
 }
 
 void ScoringTestBase::check_extent_scores(std::string_view extent_type,
-                                      const extent_scores_t& extent_scores,
-                                      const top_extent_scores_t& top_extent_scores,
-                                      const test_extent_scores& exp_extent_scores)
+                                          const extent_scores_t& extent_scores,
+                                          const top_extent_scores_t& top_extent_scores,
+                                          const test_extent_scores& exp_extent_scores)
 {
     EXPECT_EQ(extent_scores.size(), exp_extent_scores.size()) << "Extent type: " << extent_type;
     EXPECT_EQ(top_extent_scores.size(), exp_extent_scores.size()) << "Extent type: " << extent_type;

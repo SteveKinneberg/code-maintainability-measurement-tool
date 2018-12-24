@@ -13,9 +13,7 @@
 
 /// @cond IGNORE
 namespace {
-
 const auto locale = std::locale("C");
-
 }
 /// @endcond
 
